@@ -7,8 +7,10 @@
     text-decoration: none;
     border: none;
     outline: none;
+    list-style: none;
     scroll-behavior: smooth;
     font-family: 'Exo 2', sans-serif;
+    color: black;
 }
 
 :root {
@@ -39,13 +41,12 @@ body {
     display: inline;
 }
 
+
 header {
-    position: fixed;
-    top: 0;
-    left: 0;
+    height: 12rem;
     width: 100%;
-    padding: 2rem 9%;
-    background-color: rgba(255, 255, 0, 0.356);
+    padding: .5rem 3%;
+    background: rgba(217, 219, 107, 0.356);
     box-sizing: border-box;
     display: flex;
     align-items: center;
@@ -54,12 +55,86 @@ header {
 }
 
 header img {
-    margin: 3rem;
-    height: 12rem;
+    margin: 0.5rem;
+    height: 10rem;
+    margin-right: 1rem;
+}
+
+.header__id {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header h1 {
+    font-size: var(--big);
+    color: rgba(255, 30, 0, 0.925);
+}
+
+.header__logo__mobile {
+    display: none;
+}
+
+.navbar {
+    font-size: 1.7rem;
+    color: black;
+    font-weight: 500;
+    margin-left: 3.5rem;
+    transition: .3s;
+}
+
+.navbar a {
     margin-right: 5rem;
 }
 
+.navbar a:last-child {
+    margin-right: 0;
+}
+
+.navbar a:hover {
+    color: var(--white)
+}
+
 main {
+    width: 100%;
+    height: calc(100vh - 12rem - 7rem);
+    padding: .5rem 3%;
     box-sizing: border-box;
-    z-index: 50;
+    display: grid;
+    align-items: center;
+    justify-content: space-between;
+}
+
+footer {
+    width: 100%;
+    height: 7rem;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem 0;
+}
+
+footer .icons {
+
+    width: 15rem;
+    height: 5rem;
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    justify-content: space-between;
+}
+
+footer .icons span {
+    color: red;
+}
+
+.copyright {
+    font-size: 1rem;
+
+    text-align: center;
+    color: #666;
+    margin-top: .5rem 0;
+    bottom: 0;
 }
