@@ -10,7 +10,6 @@
     list-style: none;
     scroll-behavior: smooth;
     font-family: 'Exo 2', sans-serif;
-    color: black;
 }
 
 :root {
@@ -38,9 +37,9 @@ body {
     background-size: cover;
     background-attachment: fixed;
     text-decoration: none;
-    display: inline;
+    margin: 90px auto 0;
+    /* Ajusta el margen superior para evitar superposición con el header */
 }
-
 
 header {
     height: 12rem;
@@ -51,7 +50,12 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    z-index: 100;
+    z-index: 200;
+    position: fixed;
+    /* Fija el header en la parte superior */
+    top: 0;
+    left: 0;
+    right: 0;
 }
 
 header img {
@@ -85,6 +89,8 @@ header h1 {
 
 .navbar a {
     margin-right: 5rem;
+    text-decoration: none;
+    color: #333;
 }
 
 .navbar a:last-child {
@@ -97,18 +103,77 @@ header h1 {
 
 main {
     width: 100%;
-    height: calc(100vh - 12rem - 7rem);
-    padding: .5rem 3%;
+    height: calc(100vh - 12rem);
+    padding: 12rem 2% 0;
     box-sizing: border-box;
     display: grid;
-    align-items: center;
     justify-content: space-between;
+}
+
+aside {
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(247, 76, 76, 0.733);
+    padding: 2rem;
+    margin-top: 2rem;
+    z-index: 100;
+}
+
+.container {
+    flex-grow: 1;
+}
+
+.container label {
+    font-size: 1.8rem;
+}
+
+.container button {
+    font-size: medium;
+}
+
+form {
+    margin-top: 2rem;
+}
+
+.slider__aside {
+    display: flex;
+    width: 30rem;
+    height: 22rem;
+    margin-top: 2rem;
+}
+
+.slider__aside img {
+    width: 0;
+    flex-grow: 1;
+    object-fit: cover;
+    opacity: .8;
+    transition: .5s ease;
+}
+
+.slider__aside img:hover {
+    cursor: crosshair;
+    width: 15rem;
+    opacity: 1;
+    filter: contrast(120%);
+}
+
+.aside__publicity {
+    display: flex;
+    width: 30rem;
+    height: 22rem;
+    margin-top: 2rem;
+    align-items: center;
+}
+
+.aside__publicity img {
+    height: 20rem;
 }
 
 footer {
     width: 100%;
-    height: 7rem;
-    position: relative;
+    height: 15rem;
+    position: fixed;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -127,7 +192,11 @@ footer .icons {
 }
 
 footer .icons span {
-    color: red;
+    color: rgb(238, 54, 54);
+}
+
+footer a {
+    text-decoration: none;
 }
 
 .copyright {
